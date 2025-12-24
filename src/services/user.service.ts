@@ -1,4 +1,5 @@
 const API_URL = "/api";
+// testing
 
 export const getUsers = async () => {
   const res = await fetch(`${API_URL}/users`, {
