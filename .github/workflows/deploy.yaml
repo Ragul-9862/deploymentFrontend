@@ -19,7 +19,8 @@ jobs:
 
       - name: Deploy Frontend
         run: |
-          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no \
+          ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
           set -e
           cd /var/www/frontend.apidev.cloud
           git pull origin main
