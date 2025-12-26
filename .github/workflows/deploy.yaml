@@ -29,10 +29,19 @@ jobs:
 
             cd /var/www/frontend.apidev.cloud/deploymentFrontend
 
+            echo "📥 Pulling latest code"
             git pull origin main
-            npm install
+
+            echo "📦 Installing dependencies"
+            npm ci
+
+            echo "🏗️ Building Next.js app"
             npm run build
 
-            pm2 restart apidev-frontend || pm2 start npm --name apidev-frontend -- start
+            echo "🚀 Restarting PM2 frontend"
+            pm2 describe apidev-frontend > /dev/null \
+              && pm2 restart apidev-frontend \
+              || pm2 start npm --name apidev-frontend -- start
+
             pm2 save
           EOF
