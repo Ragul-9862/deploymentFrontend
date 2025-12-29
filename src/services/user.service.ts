@@ -1,5 +1,4 @@
-const API_URL = "http://apidev.cloud/api/api";
-
+const API_URL = "http://apidev.cloud/api";
 
 
 export const getUsers = async () => {
