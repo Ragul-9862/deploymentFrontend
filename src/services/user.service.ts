@@ -1,11 +1,12 @@
-const API_URL = "http://apidev.cloud/api/api";
+// const API_URL = "http://apidev.cloud/api/api";
+const API_URL = "http://localhost:3000/api";
 
 
 export const getUsers = async () => {
   const res = await fetch(`${API_URL}/users/get`, {
     cache: "no-store",
   });
-
+console.log(res);
   if (!res.ok) throw new Error("Failed to fetch users");
 
   return res.json();
