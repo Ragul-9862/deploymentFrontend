@@ -1,8 +1,8 @@
-const API_URL = "http://apidev.cloud/api";
+const API_URL = "http://apidev.cloud/api/api";
 
 
 export const getUsers = async () => {
-  const res = await fetch(`${API_URL}/users`, {
+  const res = await fetch(`${API_URL}/users/get`, {
     cache: "no-store",
   });
 
