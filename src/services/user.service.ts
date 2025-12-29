@@ -1,5 +1,5 @@
-// const API_URL = "http://apidev.cloud/api/api";
-const API_URL = "http://localhost:3000/api";
+const API_URL = "http://apidev.cloud/api/api";
+// const API_URL = "http://localhost:3000/api";
 
 
 export const getUsers = async () => {
